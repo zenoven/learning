@@ -1,0 +1,35 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _webpack = require('webpack');
+
+var _webpack2 = _interopRequireDefault(_webpack);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var conf = {
+    entry: {
+        main: _path2.default.join(__dirname, './demo/index.js')
+    },
+    output: {
+        path: _path2.default.join(__dirname, './build'),
+        fileName: '[name].bundle.js',
+        publicPath: './'
+    },
+    module: {
+        loaders: [{
+            test: /\.jsx?$/,
+            loaders: ['babel?compact=false'],
+            exclude: /node_modules/
+        }]
+    }
+};
+
+exports.default = conf;
